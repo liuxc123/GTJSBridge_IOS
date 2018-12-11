@@ -1,0 +1,6 @@
+framework module GTJSBridge {
+  umbrella header "GTJSBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}

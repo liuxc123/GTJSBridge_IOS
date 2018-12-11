@@ -1,0 +1,875 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DBF32B16A8056EAE9028A020B5CFD36 /* GTJSPluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBB7A943EB57225BBD967D216E9D612 /* GTJSPluginManager.m */; };
+		450AD01C7CD108B152281841A25895BD /* GTJSCommandQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756BE87116CF8B21875C2B4F955C617C /* GTJSCommandQueue.m */; };
+		47A1E8E3286701D5D7767B4142826FB7 /* GTJSService.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A246D68A1A3AECBAB0EE195CF36FA /* GTJSService.m */; };
+		4F3482425547ABBAEC158E47BD26BE8F /* GTJSInvokedUrlCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FE63A6CDC26C242A7987878E86CEE5 /* GTJSInvokedUrlCommand.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62D6A80C18D0ABD68EFA4ECCFCE3FD39 /* GTJSPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EDFEA089B37D0EA929FE8D508EED07F /* GTJSPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66703216FC1E0A6D2B53F7110CF1B59B /* GTJSPluginResult.h in Headers */ = {isa = PBXBuildFile; fileRef = B337F886D542883427FD95E20CB2529A /* GTJSPluginResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF812F3B51AD47250A5AEE7968434E8 /* GTJSQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1493FB02C3A9629C9187865F210CFDF0 /* GTJSQueue.m */; };
+		6B1A1B843FD44E0A9C60CDCCDFCDC6A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		7317DC4F1D9E22DE0B66E1C10E926B49 /* GTJSBridge-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1207BADEFE32C31B30DB86854B9A39 /* GTJSBridge-dummy.m */; };
+		759D8B5ABA39401A89ED031E4DB9FEAC /* GTJSInvokedUrlCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8901C959693F401E4C76A06916A3E /* GTJSInvokedUrlCommand.m */; };
+		79AA96D7107D4E6B36AF44FEA2005A99 /* Pods-GTJSBridge_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F37228010F2E720C1A752842E010C6 /* Pods-GTJSBridge_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79ECB8F56B9982ED98D6676069386319 /* Pods-GTJSBridge_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1141AC537E7A6A53B7C5C871D22B11D /* Pods-GTJSBridge_Example-dummy.m */; };
+		7A0FC5D12832F857091D9BF6CD36AFA3 /* GTJSPluginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AFF77AC1C328BEE825FC103EB76D3 /* GTJSPluginResult.m */; };
+		7DD103BB889B557601254F60B01CA4C6 /* GTJSBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = E247881FAD815BC8FE499801C0FBE8A0 /* GTJSBridge.js.txt */; };
+		8624F2DAD8D1498BC662ED1E69349C56 /* Pods-GTJSBridge_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB6655AE61F2C12C3A6A5471BE7153 /* Pods-GTJSBridge_Tests-dummy.m */; };
+		874A292199EFF0756F6AE03D13DFAD55 /* GTJSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = F69B501F237EDB137ADEA4476A8FB8FE /* GTJSJSON.m */; };
+		8796600B7B444A2FD2D5710D21308875 /* GTJSJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 28733C2FD54557D21B0CD045E4AD1B8F /* GTJSJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD0A151AB92D8653F2BD3F7B4C8E84D /* GTJSPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB96D7AA1C12BB99DB78181723787DD /* GTJSPlugin.m */; };
+		92FC2EEF44D694B039B091CCF9E06596 /* Pods-GTJSBridge_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC5F82DE55CCB158948A28374029BE65 /* Pods-GTJSBridge_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97498175EBDA1591E169C010D50DA947 /* GTJSQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AB942A65CBCDB500C50ECB23EA4DDC7F /* GTJSQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E40B9CD865110A0137870FE7BFB0A6E /* GTJSPluginManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F792AC59D726B1F8583C062AAAEA4FF5 /* GTJSPluginManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F8062F1346D1E16ABE8EF25ED835025 /* GTJSCommandDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA08002696A3B0B692C11C09B3F10C3 /* GTJSCommandDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC15284455547696ACDA203F11895ABE /* GTJSBridge-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1E2E314F3DBC621E45AC10E3391F2E4 /* GTJSBridge-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACFD308D40B10941A6A1380DABCAFD93 /* PluginConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 71FA40191D76E2869114F23D7457739D /* PluginConfig.json */; };
+		C34FE6AB3E608A4F281087E326089BDD /* GTJSCommandDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F67EEB3A8BDB12CB281F53171B7EA672 /* GTJSCommandDelegate.m */; };
+		CD9746EDF4F542385546B0FE3F1CF957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		CF4D6ABD43AE2BE91E7FCE78D5C0365F /* GTPDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 9597E9CD6DF3CDD4411687067747733E /* GTPDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D32C0A41AA5CBB88C6CA2BADDF14CB0C /* GTJSCommandQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 377E53349C71E05BE55B339D523E2F03 /* GTJSCommandQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D58DF0CAEBF043387C265791222D5F75 /* GTJSService.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D9D149DB9B91DA21D48F1A76645591 /* GTJSService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3988C72C5D62258644E58E638FC0CD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		FD162158D0D0B1466BF4C7FB4E90F31E /* GTPDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE41D5A1D5EC337AE38912E1211216B /* GTPDevice.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70E0FDF58DF85EFB768187A6B05CEE09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E7589135DA7EE0986C875AC4BAF5ECE;
+			remoteInfo = "Pods-GTJSBridge_Example";
+		};
+		74C32FD404300CB65E2EEC92930AE3B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EE1A463295ADBD8F9F0659431DD406D;
+			remoteInfo = GTJSBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		015A23DDEC598B7E6112460019B877F2 /* GTJSBridge.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GTJSBridge.modulemap; sourceTree = "<group>"; };
+		03CA8B75DB7CEFFE9AA3C7093388D0BE /* Pods-GTJSBridge_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GTJSBridge_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1041CEDF1471045FE632DBFE787CA0CD /* GTJSBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GTJSBridge.framework; path = GTJSBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1493FB02C3A9629C9187865F210CFDF0 /* GTJSQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSQueue.m; path = GTJSBridge/GTJSService/GTJSQueue.m; sourceTree = "<group>"; };
+		25F9DADDAB166BEAB1870FBE63932835 /* Pods-GTJSBridge_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GTJSBridge_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		28733C2FD54557D21B0CD045E4AD1B8F /* GTJSJSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSJSON.h; path = GTJSBridge/GTJSService/GTJSJSON.h; sourceTree = "<group>"; };
+		2CE41D5A1D5EC337AE38912E1211216B /* GTPDevice.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTPDevice.m; path = GTJSBridge/Plugins/GTPDevice.m; sourceTree = "<group>"; };
+		2E76F46BFDF4802B81E6AF121864C535 /* Pods-GTJSBridge_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GTJSBridge_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		377E53349C71E05BE55B339D523E2F03 /* GTJSCommandQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSCommandQueue.h; path = GTJSBridge/GTJSService/GTJSCommandQueue.h; sourceTree = "<group>"; };
+		3D3991DC2F46A11F072A89A4A042EFD0 /* GTJSBridge-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTJSBridge-prefix.pch"; sourceTree = "<group>"; };
+		4156865A1112C2B29B93D588DF5939F1 /* GTJSBridge.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTJSBridge.xcconfig; sourceTree = "<group>"; };
+		41A4C3617E7D6013C00465024A39435C /* Pods-GTJSBridge_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GTJSBridge_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		43F37228010F2E720C1A752842E010C6 /* Pods-GTJSBridge_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GTJSBridge_Tests-umbrella.h"; sourceTree = "<group>"; };
+		48D8901C959693F401E4C76A06916A3E /* GTJSInvokedUrlCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSInvokedUrlCommand.m; path = GTJSBridge/GTJSService/GTJSInvokedUrlCommand.m; sourceTree = "<group>"; };
+		4CB96D7AA1C12BB99DB78181723787DD /* GTJSPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSPlugin.m; path = GTJSBridge/GTJSService/GTJSPlugin.m; sourceTree = "<group>"; };
+		4EBB7A943EB57225BBD967D216E9D612 /* GTJSPluginManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSPluginManager.m; path = GTJSBridge/GTJSService/GTJSPluginManager.m; sourceTree = "<group>"; };
+		513A246D68A1A3AECBAB0EE195CF36FA /* GTJSService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSService.m; path = GTJSBridge/GTJSService/GTJSService.m; sourceTree = "<group>"; };
+		56FE63A6CDC26C242A7987878E86CEE5 /* GTJSInvokedUrlCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSInvokedUrlCommand.h; path = GTJSBridge/GTJSService/GTJSInvokedUrlCommand.h; sourceTree = "<group>"; };
+		63F76852FB8BEDD788E9E6655015C3AD /* Pods-GTJSBridge_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GTJSBridge_Example-Info.plist"; sourceTree = "<group>"; };
+		6BAB6655AE61F2C12C3A6A5471BE7153 /* Pods-GTJSBridge_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GTJSBridge_Tests-dummy.m"; sourceTree = "<group>"; };
+		6C900213F13C0E385631FF8ADF468D51 /* Pods_GTJSBridge_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GTJSBridge_Example.framework; path = "Pods-GTJSBridge_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDFEA089B37D0EA929FE8D508EED07F /* GTJSPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSPlugin.h; path = GTJSBridge/GTJSService/GTJSPlugin.h; sourceTree = "<group>"; };
+		702EBBD974199C360DF79ABAF6A9082A /* Pods-GTJSBridge_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GTJSBridge_Tests-Info.plist"; sourceTree = "<group>"; };
+		71FA40191D76E2869114F23D7457739D /* PluginConfig.json */ = {isa = PBXFileReference; includeInIndex = 1; name = PluginConfig.json; path = GTJSBridge/GTJSService/PluginConfig.json; sourceTree = "<group>"; };
+		756BE87116CF8B21875C2B4F955C617C /* GTJSCommandQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSCommandQueue.m; path = GTJSBridge/GTJSService/GTJSCommandQueue.m; sourceTree = "<group>"; };
+		80505C6A4B570FF715669200B1D389BF /* Pods-GTJSBridge_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GTJSBridge_Example.modulemap"; sourceTree = "<group>"; };
+		8253AC0E5BDEA51BF0C14A48B32DAB59 /* GTJSBridge.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GTJSBridge.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8C10C5B144FAFE351AAA808E579750B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8C2AFF77AC1C328BEE825FC103EB76D3 /* GTJSPluginResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSPluginResult.m; path = GTJSBridge/GTJSService/GTJSPluginResult.m; sourceTree = "<group>"; };
+		9597E9CD6DF3CDD4411687067747733E /* GTPDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTPDevice.h; path = GTJSBridge/Plugins/GTPDevice.h; sourceTree = "<group>"; };
+		98826DF90AA2D6B52A58339769838C0B /* GTJSBridge-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GTJSBridge-Info.plist"; sourceTree = "<group>"; };
+		AB942A65CBCDB500C50ECB23EA4DDC7F /* GTJSQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSQueue.h; path = GTJSBridge/GTJSService/GTJSQueue.h; sourceTree = "<group>"; };
+		AD3173B4AD83C5FBC44EB0F22AC13F4D /* Pods-GTJSBridge_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GTJSBridge_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2D9D149DB9B91DA21D48F1A76645591 /* GTJSService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSService.h; path = GTJSBridge/GTJSService/GTJSService.h; sourceTree = "<group>"; };
+		B337F886D542883427FD95E20CB2529A /* GTJSPluginResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSPluginResult.h; path = GTJSBridge/GTJSService/GTJSPluginResult.h; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BD15F6FD3920C4D96C0E5539440F2807 /* Pods_GTJSBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GTJSBridge_Tests.framework; path = "Pods-GTJSBridge_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1E2E314F3DBC621E45AC10E3391F2E4 /* GTJSBridge-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTJSBridge-umbrella.h"; sourceTree = "<group>"; };
+		C35535CD67FB984ECF929FE63B3D68B5 /* Pods-GTJSBridge_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GTJSBridge_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C3E0C3C684E03191B770CC5AD8D8AABB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E1141AC537E7A6A53B7C5C871D22B11D /* Pods-GTJSBridge_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GTJSBridge_Example-dummy.m"; sourceTree = "<group>"; };
+		E247881FAD815BC8FE499801C0FBE8A0 /* GTJSBridge.js.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = GTJSBridge.js.txt; path = GTJSBridge/GTJSService/GTJSBridge.js.txt; sourceTree = "<group>"; };
+		E2630731771945197316A0D5D94A751C /* Pods-GTJSBridge_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GTJSBridge_Example-frameworks.sh"; sourceTree = "<group>"; };
+		E980A23C581F1032F046B1DA51E3DEE0 /* Pods-GTJSBridge_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GTJSBridge_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EA1207BADEFE32C31B30DB86854B9A39 /* GTJSBridge-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTJSBridge-dummy.m"; sourceTree = "<group>"; };
+		F534C7EE204E80DF89DBA7AF8A85899A /* Pods-GTJSBridge_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GTJSBridge_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F67EEB3A8BDB12CB281F53171B7EA672 /* GTJSCommandDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSCommandDelegate.m; path = GTJSBridge/GTJSService/GTJSCommandDelegate.m; sourceTree = "<group>"; };
+		F69B501F237EDB137ADEA4476A8FB8FE /* GTJSJSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTJSJSON.m; path = GTJSBridge/GTJSService/GTJSJSON.m; sourceTree = "<group>"; };
+		F792AC59D726B1F8583C062AAAEA4FF5 /* GTJSPluginManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSPluginManager.h; path = GTJSBridge/GTJSService/GTJSPluginManager.h; sourceTree = "<group>"; };
+		FC4FDD67EEE846E21907D82E916C8DD5 /* Pods-GTJSBridge_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GTJSBridge_Tests.modulemap"; sourceTree = "<group>"; };
+		FC5F82DE55CCB158948A28374029BE65 /* Pods-GTJSBridge_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GTJSBridge_Example-umbrella.h"; sourceTree = "<group>"; };
+		FDA08002696A3B0B692C11C09B3F10C3 /* GTJSCommandDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTJSCommandDelegate.h; path = GTJSBridge/GTJSService/GTJSCommandDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45ED56B7EAA0116BFC83D1DB3B43E41F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3988C72C5D62258644E58E638FC0CD7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65D198B8296E0F867BDA75C1928D2EBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1A1B843FD44E0A9C60CDCCDFCDC6A1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7F6311DE5717B435EA83B48EF78484C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD9746EDF4F542385546B0FE3F1CF957 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0377D5D30B5EDE7D182A08FCA9E83631 /* Pods-GTJSBridge_Example */ = {
+			isa = PBXGroup;
+			children = (
+				80505C6A4B570FF715669200B1D389BF /* Pods-GTJSBridge_Example.modulemap */,
+				F534C7EE204E80DF89DBA7AF8A85899A /* Pods-GTJSBridge_Example-acknowledgements.markdown */,
+				C35535CD67FB984ECF929FE63B3D68B5 /* Pods-GTJSBridge_Example-acknowledgements.plist */,
+				E1141AC537E7A6A53B7C5C871D22B11D /* Pods-GTJSBridge_Example-dummy.m */,
+				E2630731771945197316A0D5D94A751C /* Pods-GTJSBridge_Example-frameworks.sh */,
+				63F76852FB8BEDD788E9E6655015C3AD /* Pods-GTJSBridge_Example-Info.plist */,
+				FC5F82DE55CCB158948A28374029BE65 /* Pods-GTJSBridge_Example-umbrella.h */,
+				03CA8B75DB7CEFFE9AA3C7093388D0BE /* Pods-GTJSBridge_Example.debug.xcconfig */,
+				E980A23C581F1032F046B1DA51E3DEE0 /* Pods-GTJSBridge_Example.release.xcconfig */,
+			);
+			name = "Pods-GTJSBridge_Example";
+			path = "Target Support Files/Pods-GTJSBridge_Example";
+			sourceTree = "<group>";
+		};
+		1F33FAACF5EF8CFCBCFA8BBEAC08FB98 /* GTJSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C28CAE10B0FEB4E720AB7B4A946D9 /* JSService */,
+				5A39BD0AF5495E046B3B2C0F4B00C654 /* Plugins */,
+				816854F831DEC5D940B1ACF06AFF7ACD /* Pod */,
+				AF7C4518570D5115D8072B422733FEE4 /* Support Files */,
+			);
+			name = GTJSBridge;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3C40C0E616F6D8C6404A636CB708FFEA /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0377D5D30B5EDE7D182A08FCA9E83631 /* Pods-GTJSBridge_Example */,
+				9579F66CA7E504FB596FA24D10737D94 /* Pods-GTJSBridge_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4C0C28CAE10B0FEB4E720AB7B4A946D9 /* JSService */ = {
+			isa = PBXGroup;
+			children = (
+				FDA08002696A3B0B692C11C09B3F10C3 /* GTJSCommandDelegate.h */,
+				F67EEB3A8BDB12CB281F53171B7EA672 /* GTJSCommandDelegate.m */,
+				377E53349C71E05BE55B339D523E2F03 /* GTJSCommandQueue.h */,
+				756BE87116CF8B21875C2B4F955C617C /* GTJSCommandQueue.m */,
+				56FE63A6CDC26C242A7987878E86CEE5 /* GTJSInvokedUrlCommand.h */,
+				48D8901C959693F401E4C76A06916A3E /* GTJSInvokedUrlCommand.m */,
+				28733C2FD54557D21B0CD045E4AD1B8F /* GTJSJSON.h */,
+				F69B501F237EDB137ADEA4476A8FB8FE /* GTJSJSON.m */,
+				6EDFEA089B37D0EA929FE8D508EED07F /* GTJSPlugin.h */,
+				4CB96D7AA1C12BB99DB78181723787DD /* GTJSPlugin.m */,
+				F792AC59D726B1F8583C062AAAEA4FF5 /* GTJSPluginManager.h */,
+				4EBB7A943EB57225BBD967D216E9D612 /* GTJSPluginManager.m */,
+				B337F886D542883427FD95E20CB2529A /* GTJSPluginResult.h */,
+				8C2AFF77AC1C328BEE825FC103EB76D3 /* GTJSPluginResult.m */,
+				AB942A65CBCDB500C50ECB23EA4DDC7F /* GTJSQueue.h */,
+				1493FB02C3A9629C9187865F210CFDF0 /* GTJSQueue.m */,
+				B2D9D149DB9B91DA21D48F1A76645591 /* GTJSService.h */,
+				513A246D68A1A3AECBAB0EE195CF36FA /* GTJSService.m */,
+				7D9CDCDFF5A4EBF2B64A26BC87679A0F /* Resources */,
+			);
+			name = JSService;
+			sourceTree = "<group>";
+		};
+		5A39BD0AF5495E046B3B2C0F4B00C654 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				9597E9CD6DF3CDD4411687067747733E /* GTPDevice.h */,
+				2CE41D5A1D5EC337AE38912E1211216B /* GTPDevice.m */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		6DEA079F74F7F07534E3E8DE0BFDFE00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1041CEDF1471045FE632DBFE787CA0CD /* GTJSBridge.framework */,
+				6C900213F13C0E385631FF8ADF468D51 /* Pods_GTJSBridge_Example.framework */,
+				BD15F6FD3920C4D96C0E5539440F2807 /* Pods_GTJSBridge_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D9CDCDFF5A4EBF2B64A26BC87679A0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E247881FAD815BC8FE499801C0FBE8A0 /* GTJSBridge.js.txt */,
+				71FA40191D76E2869114F23D7457739D /* PluginConfig.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				CCB6301300120DC155AE8E678AC67C47 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				6DEA079F74F7F07534E3E8DE0BFDFE00 /* Products */,
+				3C40C0E616F6D8C6404A636CB708FFEA /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		816854F831DEC5D940B1ACF06AFF7ACD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8253AC0E5BDEA51BF0C14A48B32DAB59 /* GTJSBridge.podspec */,
+				C3E0C3C684E03191B770CC5AD8D8AABB /* LICENSE */,
+				8C10C5B144FAFE351AAA808E579750B6 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		9579F66CA7E504FB596FA24D10737D94 /* Pods-GTJSBridge_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FC4FDD67EEE846E21907D82E916C8DD5 /* Pods-GTJSBridge_Tests.modulemap */,
+				2E76F46BFDF4802B81E6AF121864C535 /* Pods-GTJSBridge_Tests-acknowledgements.markdown */,
+				41A4C3617E7D6013C00465024A39435C /* Pods-GTJSBridge_Tests-acknowledgements.plist */,
+				6BAB6655AE61F2C12C3A6A5471BE7153 /* Pods-GTJSBridge_Tests-dummy.m */,
+				702EBBD974199C360DF79ABAF6A9082A /* Pods-GTJSBridge_Tests-Info.plist */,
+				43F37228010F2E720C1A752842E010C6 /* Pods-GTJSBridge_Tests-umbrella.h */,
+				AD3173B4AD83C5FBC44EB0F22AC13F4D /* Pods-GTJSBridge_Tests.debug.xcconfig */,
+				25F9DADDAB166BEAB1870FBE63932835 /* Pods-GTJSBridge_Tests.release.xcconfig */,
+			);
+			name = "Pods-GTJSBridge_Tests";
+			path = "Target Support Files/Pods-GTJSBridge_Tests";
+			sourceTree = "<group>";
+		};
+		AF7C4518570D5115D8072B422733FEE4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				015A23DDEC598B7E6112460019B877F2 /* GTJSBridge.modulemap */,
+				4156865A1112C2B29B93D588DF5939F1 /* GTJSBridge.xcconfig */,
+				EA1207BADEFE32C31B30DB86854B9A39 /* GTJSBridge-dummy.m */,
+				98826DF90AA2D6B52A58339769838C0B /* GTJSBridge-Info.plist */,
+				3D3991DC2F46A11F072A89A4A042EFD0 /* GTJSBridge-prefix.pch */,
+				C1E2E314F3DBC621E45AC10E3391F2E4 /* GTJSBridge-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GTJSBridge";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D5347904CF754D6785B84253F2574A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCB6301300120DC155AE8E678AC67C47 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F33FAACF5EF8CFCBCFA8BBEAC08FB98 /* GTJSBridge */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2A6719BAB29A66FC109FFBAA7549C981 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92FC2EEF44D694B039B091CCF9E06596 /* Pods-GTJSBridge_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99B715F21F99FB3A69B58345EEFDB6B4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79AA96D7107D4E6B36AF44FEA2005A99 /* Pods-GTJSBridge_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF8C56EB2B5F11094B30A1EDB6D605D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC15284455547696ACDA203F11895ABE /* GTJSBridge-umbrella.h in Headers */,
+				9F8062F1346D1E16ABE8EF25ED835025 /* GTJSCommandDelegate.h in Headers */,
+				D32C0A41AA5CBB88C6CA2BADDF14CB0C /* GTJSCommandQueue.h in Headers */,
+				4F3482425547ABBAEC158E47BD26BE8F /* GTJSInvokedUrlCommand.h in Headers */,
+				8796600B7B444A2FD2D5710D21308875 /* GTJSJSON.h in Headers */,
+				62D6A80C18D0ABD68EFA4ECCFCE3FD39 /* GTJSPlugin.h in Headers */,
+				9E40B9CD865110A0137870FE7BFB0A6E /* GTJSPluginManager.h in Headers */,
+				66703216FC1E0A6D2B53F7110CF1B59B /* GTJSPluginResult.h in Headers */,
+				97498175EBDA1591E169C010D50DA947 /* GTJSQueue.h in Headers */,
+				D58DF0CAEBF043387C265791222D5F75 /* GTJSService.h in Headers */,
+				CF4D6ABD43AE2BE91E7FCE78D5C0365F /* GTPDevice.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4EE1A463295ADBD8F9F0659431DD406D /* GTJSBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73D14E79FC52D475382AA63EB79DAC29 /* Build configuration list for PBXNativeTarget "GTJSBridge" */;
+			buildPhases = (
+				EF8C56EB2B5F11094B30A1EDB6D605D6 /* Headers */,
+				EF13134450514185F18D1AB3AD918F55 /* Sources */,
+				45ED56B7EAA0116BFC83D1DB3B43E41F /* Frameworks */,
+				830A41653D1DE044B15A08DEE9ABD58F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GTJSBridge;
+			productName = GTJSBridge;
+			productReference = 1041CEDF1471045FE632DBFE787CA0CD /* GTJSBridge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8E7589135DA7EE0986C875AC4BAF5ECE /* Pods-GTJSBridge_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DDF7527679F90582DFA62063CBCE5DF /* Build configuration list for PBXNativeTarget "Pods-GTJSBridge_Example" */;
+			buildPhases = (
+				2A6719BAB29A66FC109FFBAA7549C981 /* Headers */,
+				D22B9C9B481F59B8CF2389C7CDC60E48 /* Sources */,
+				B7F6311DE5717B435EA83B48EF78484C /* Frameworks */,
+				6E0BE8B85547CA76A6E5436E9127160E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05E176B7D0DF5DE4F2A3F39938C1A1BB /* PBXTargetDependency */,
+			);
+			name = "Pods-GTJSBridge_Example";
+			productName = "Pods-GTJSBridge_Example";
+			productReference = 6C900213F13C0E385631FF8ADF468D51 /* Pods_GTJSBridge_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5FF62BED418A5F6C9DFD6C71758D350 /* Pods-GTJSBridge_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816332593B4C6911D6FA03F837ADC58E /* Build configuration list for PBXNativeTarget "Pods-GTJSBridge_Tests" */;
+			buildPhases = (
+				99B715F21F99FB3A69B58345EEFDB6B4 /* Headers */,
+				C8867842E6B3670B56EC8F32955BE9CB /* Sources */,
+				65D198B8296E0F867BDA75C1928D2EBF /* Frameworks */,
+				87FDD32B1B2A8BDF3132F7AED3C8E836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70C46C8458FBD6DE234A41104CB89DBA /* PBXTargetDependency */,
+			);
+			name = "Pods-GTJSBridge_Tests";
+			productName = "Pods-GTJSBridge_Tests";
+			productReference = BD15F6FD3920C4D96C0E5539440F2807 /* Pods_GTJSBridge_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6DEA079F74F7F07534E3E8DE0BFDFE00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EE1A463295ADBD8F9F0659431DD406D /* GTJSBridge */,
+				8E7589135DA7EE0986C875AC4BAF5ECE /* Pods-GTJSBridge_Example */,
+				C5FF62BED418A5F6C9DFD6C71758D350 /* Pods-GTJSBridge_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E0BE8B85547CA76A6E5436E9127160E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		830A41653D1DE044B15A08DEE9ABD58F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DD103BB889B557601254F60B01CA4C6 /* GTJSBridge.js.txt in Resources */,
+				ACFD308D40B10941A6A1380DABCAFD93 /* PluginConfig.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87FDD32B1B2A8BDF3132F7AED3C8E836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8867842E6B3670B56EC8F32955BE9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8624F2DAD8D1498BC662ED1E69349C56 /* Pods-GTJSBridge_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D22B9C9B481F59B8CF2389C7CDC60E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79ECB8F56B9982ED98D6676069386319 /* Pods-GTJSBridge_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF13134450514185F18D1AB3AD918F55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7317DC4F1D9E22DE0B66E1C10E926B49 /* GTJSBridge-dummy.m in Sources */,
+				C34FE6AB3E608A4F281087E326089BDD /* GTJSCommandDelegate.m in Sources */,
+				450AD01C7CD108B152281841A25895BD /* GTJSCommandQueue.m in Sources */,
+				759D8B5ABA39401A89ED031E4DB9FEAC /* GTJSInvokedUrlCommand.m in Sources */,
+				874A292199EFF0756F6AE03D13DFAD55 /* GTJSJSON.m in Sources */,
+				8CD0A151AB92D8653F2BD3F7B4C8E84D /* GTJSPlugin.m in Sources */,
+				3DBF32B16A8056EAE9028A020B5CFD36 /* GTJSPluginManager.m in Sources */,
+				7A0FC5D12832F857091D9BF6CD36AFA3 /* GTJSPluginResult.m in Sources */,
+				6AF812F3B51AD47250A5AEE7968434E8 /* GTJSQueue.m in Sources */,
+				47A1E8E3286701D5D7767B4142826FB7 /* GTJSService.m in Sources */,
+				FD162158D0D0B1466BF4C7FB4E90F31E /* GTPDevice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05E176B7D0DF5DE4F2A3F39938C1A1BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTJSBridge;
+			target = 4EE1A463295ADBD8F9F0659431DD406D /* GTJSBridge */;
+			targetProxy = 74C32FD404300CB65E2EEC92930AE3B0 /* PBXContainerItemProxy */;
+		};
+		70C46C8458FBD6DE234A41104CB89DBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GTJSBridge_Example";
+			target = 8E7589135DA7EE0986C875AC4BAF5ECE /* Pods-GTJSBridge_Example */;
+			targetProxy = 70E0FDF58DF85EFB768187A6B05CEE09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		521BE115B9B269171E9E3F5B05C3514F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03CA8B75DB7CEFFE9AA3C7093388D0BE /* Pods-GTJSBridge_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GTJSBridge_Example/Pods-GTJSBridge_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GTJSBridge_Example/Pods-GTJSBridge_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6911B7D2923448F9AE7278EC9A2B867C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F9DADDAB166BEAB1870FBE63932835 /* Pods-GTJSBridge_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GTJSBridge_Tests/Pods-GTJSBridge_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GTJSBridge_Tests/Pods-GTJSBridge_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7475AC277788BD7879182722C0F61FA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD3173B4AD83C5FBC44EB0F22AC13F4D /* Pods-GTJSBridge_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GTJSBridge_Tests/Pods-GTJSBridge_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GTJSBridge_Tests/Pods-GTJSBridge_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A390E1A023025FEE5C431494D30E34E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4156865A1112C2B29B93D588DF5939F1 /* GTJSBridge.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GTJSBridge/GTJSBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GTJSBridge/GTJSBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GTJSBridge/GTJSBridge.modulemap";
+				PRODUCT_MODULE_NAME = GTJSBridge;
+				PRODUCT_NAME = GTJSBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A76D37755EFCE9425BA623AAA7963D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E980A23C581F1032F046B1DA51E3DEE0 /* Pods-GTJSBridge_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GTJSBridge_Example/Pods-GTJSBridge_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GTJSBridge_Example/Pods-GTJSBridge_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE01AF5D395AE305A54D518A9B774D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CFC8DEA7B5326676BA33093221AAE4F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E06152DDF501796C46168A30C47B2D22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4156865A1112C2B29B93D588DF5939F1 /* GTJSBridge.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GTJSBridge/GTJSBridge-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GTJSBridge/GTJSBridge-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GTJSBridge/GTJSBridge.modulemap";
+				PRODUCT_MODULE_NAME = GTJSBridge;
+				PRODUCT_NAME = GTJSBridge;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DDF7527679F90582DFA62063CBCE5DF /* Build configuration list for PBXNativeTarget "Pods-GTJSBridge_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521BE115B9B269171E9E3F5B05C3514F /* Debug */,
+				A76D37755EFCE9425BA623AAA7963D35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFC8DEA7B5326676BA33093221AAE4F4 /* Debug */,
+				BE01AF5D395AE305A54D518A9B774D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73D14E79FC52D475382AA63EB79DAC29 /* Build configuration list for PBXNativeTarget "GTJSBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A390E1A023025FEE5C431494D30E34E6 /* Debug */,
+				E06152DDF501796C46168A30C47B2D22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		816332593B4C6911D6FA03F837ADC58E /* Build configuration list for PBXNativeTarget "Pods-GTJSBridge_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7475AC277788BD7879182722C0F61FA0 /* Debug */,
+				6911B7D2923448F9AE7278EC9A2B867C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

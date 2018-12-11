@@ -1,0 +1,21 @@
+PODS:
+  - GTJSBridge (0.0.1):
+    - GTJSBridge/JSService (= 0.0.1)
+    - GTJSBridge/Plugins (= 0.0.1)
+  - GTJSBridge/JSService (0.0.1)
+  - GTJSBridge/Plugins (0.0.1):
+    - GTJSBridge/JSService
+
+DEPENDENCIES:
+  - GTJSBridge (from `../`)
+
+EXTERNAL SOURCES:
+  GTJSBridge:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GTJSBridge: 4d6cd54dbe97786e722f353d3ed61893f21c3eb0
+
+PODFILE CHECKSUM: f2b23b8593420f497593972e352d605f5b9212d9
+
+COCOAPODS: 1.6.0.beta.2

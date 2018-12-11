@@ -1,0 +1,6 @@
+framework module Pods_GTJSBridge_Example {
+  umbrella header "Pods-GTJSBridge_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

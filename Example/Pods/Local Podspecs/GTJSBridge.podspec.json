@@ -1,0 +1,47 @@
+{
+  "name": "GTJSBridge",
+  "version": "0.0.1",
+  "summary": "提供IOS平台WAP页面和客户端本地native插件交互的枢纽框架",
+  "homepage": "https://github.com/liuxc123/GTJSBridge",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "liuxc123": "lxc_work@126.com"
+  },
+  "source": {
+    "git": "https://github.com/liuxc123/GTJSBridge.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "subspecs": [
+    {
+      "name": "JSService",
+      "platforms": {
+        "ios": "8.0"
+      },
+      "public_header_files": "GTJSBridge/GTJSService/*.h",
+      "source_files": "GTJSBridge/GTJSService/*.{h,m}",
+      "resources": [
+        "GTJSBridge/GTJSService/PluginConfig.json",
+        "GTJSBridge/GTJSService/GTJSBridge.js.txt"
+      ]
+    },
+    {
+      "name": "Plugins",
+      "platforms": {
+        "ios": "8.0"
+      },
+      "public_header_files": "GTJSBridge/Plugins/*.h",
+      "source_files": "GTJSBridge/Plugins/*.{h,m}",
+      "dependencies": {
+        "GTJSBridge/JSService": [
+
+        ]
+      }
+    }
+  ]
+}
