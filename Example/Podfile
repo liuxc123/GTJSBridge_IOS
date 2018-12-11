@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'GTJSBridge_Example' do
+  pod 'GTJSBridge', :path => '../'
+
+  target 'GTJSBridge_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
