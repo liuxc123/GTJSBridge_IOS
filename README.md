@@ -1,29 +1,22 @@
-# GTJSBridge
+# GTJSBridge_IOS
 
-[![CI Status](https://img.shields.io/travis/liuxc123/GTJSBridge.svg?style=flat)](https://travis-ci.org/liuxc123/GTJSBridge)
-[![Version](https://img.shields.io/cocoapods/v/GTJSBridge.svg?style=flat)](https://cocoapods.org/pods/GTJSBridge)
-[![License](https://img.shields.io/cocoapods/l/GTJSBridge.svg?style=flat)](https://cocoapods.org/pods/GTJSBridge)
-[![Platform](https://img.shields.io/cocoapods/p/GTJSBridge.svg?style=flat)](https://cocoapods.org/pods/GTJSBridge)
+GTJSBridge_IOS的核心目标是完成在IOS客户端中WAP页面和客户端（Native）的深度交互。
 
-## Example
+## Pod集成方法
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-GTJSBridge is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'GTJSBridge'
+```
+pod 'GTJSBridge' :git =>
 ```
 
-## Author
+## GTJSBridge_IOS的插件运行机制
+
+本GTJSBridge_IOS是基于Phonegap的Cordova引擎的基础上简化而来，其基本原理参照Cordova的引擎原理如图所示：
+
+
+## 作者
 
 liuxc123, lxc_work@126.com
 
-## License
+## 声明
 
 GTJSBridge is available under the MIT license. See the LICENSE file for more info.
