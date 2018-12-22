@@ -36,11 +36,8 @@
 
 - (void)openWebView
 {
-    GTWKWebViewPool.sharedInstance.prepare = NO;
-    
-    GTWebViewController *webVC = [[GTWebViewController alloc] initWithURLString:@"http://www.baidu.com"];
-//    webVC.navigationType = GTWebViewControllerNavigationTypeBarItem;
-//    webVC.navigationCloseBarButtonItemImage = [UIImage imageNamed:@"close"];
+
+    GTWebViewController *webVC = [[GTWebViewController alloc] initWithURLString:@"http://debug.api.webus.vip/index/other/help"];
     [self.navigationController pushViewController:webVC animated:YES];
 
 //    GTUINavigationController *navi = [[GTUINavigationController alloc] initWithRootViewController:webVC];

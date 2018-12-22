@@ -101,6 +101,12 @@
 {
     [super viewDidLoad];
 
+    //注册插件Service
+    if (_bridgeService == nil) {
+        _bridgeService = [[GTJSService alloc] initBridgeServiceWithConfig:@"PluginConfig.json"];
+    }
+    [_bridgeService connect:self.webView Controller:self];
+
     if (self.showProgressView) {
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     }

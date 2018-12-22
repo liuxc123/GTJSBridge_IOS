@@ -6,12 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GTWebViewController;
+#import "GTBaseWebViewController.h"
+@class GTBaseWebViewController;
 
 @interface UIProgressView (WKWebView)
 
 @property(nonatomic, assign) BOOL hiddenWhenWebDidLoad;
 
-@property(nonatomic, strong) GTWebViewController *webViewController;
+@property(nonatomic, weak) GTBaseWebViewController *webViewController;
 
 @end

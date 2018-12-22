@@ -79,11 +79,11 @@
     objc_setAssociatedObject(self, @selector(hiddenWhenWebDidLoad), @(hiddenWhenWebDidLoad), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (GTWebViewController *)webViewController {
+- (GTBaseWebViewController *)webViewController {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setWebViewController:(GTWebViewController *)webViewController {
+- (void)setWebViewController:(GTBaseWebViewController *)webViewController {
     objc_setAssociatedObject(self, @selector(webViewController), webViewController, OBJC_ASSOCIATION_ASSIGN);
 }
 

@@ -10,14 +10,14 @@
 #import "GTJSCommandQueue.h"
 #import "GTJSCommandDelegate.h"
 
-NSString *const GTJSBridgeConnectNotification = @"GTJSBridgeConnectNotification";
-NSString *const GTJSBridgeCloseNotification = @"GTJSBridgeCloseNotification";
-NSString *const GTJSBridgeWebFinishLoadNotification = @"GTJSBridgeWebFinishLoadNotification";
+NSString *const GTJSBridgeConnectNotification = @"LDJSBridgeConnectNotification";
+NSString *const GTJSBridgeCloseNotification = @"LDJSBridgeCloseNotification";
+NSString *const GTJSBridgeWebFinishLoadNotification = @"LDJSBridgeWebFinishLoadNotification";
 
-NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
+NSString *const JsBridgeServiceTag = @"ldjsbridgeservice";
 
 //在JS端定义字段回收代码
-#define JsBridgeScheme @"GTJSbridge"
+#define JsBridgeScheme @"LDJSbridge"
 
 
 @interface GTJSService () {
@@ -68,7 +68,7 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
 - (void)dealloc
 {
     [self close];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"UserAgent" : _userAgent }];
+   // [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"UserAgent" : _userAgent }];
     [_commandQueue dispose];
 }
 

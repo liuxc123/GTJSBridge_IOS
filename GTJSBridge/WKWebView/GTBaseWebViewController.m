@@ -209,22 +209,6 @@
     
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        return YES;
-    }
-    return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    if (self.navigationType == GTWebViewControllerNavigationTypeBarItem) {
-        [self updateNavigationItems];
-    }
-}
-
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     if ([super respondsToSelector:@selector(viewWillTransitionToSize:withTransitionCoordinator:)]) {

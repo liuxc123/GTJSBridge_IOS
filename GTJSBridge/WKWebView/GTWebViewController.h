@@ -11,6 +11,7 @@
 #import "WKWebViewExtension.h"
 #import "InterceptURLHandler.h"
 #import "GTWebViewControllerProtocol.h"
+#import "GTJSService.h"
 
 
 @interface GTWebViewController : GTBaseWebViewController
@@ -57,6 +58,9 @@
  2.给url追加参数
  */
 @property(nonatomic, assign) BOOL needInterceptRequest;
+
+
+@property(nonatomic, weak, readwrite) GTJSService *bridgeService;
 
 /**
  初始化方法

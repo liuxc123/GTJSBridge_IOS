@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F0BA5C21CE34DD00BC3391 /* zepto.js in Resources */ = {isa = PBXBuildFile; fileRef = 04F0BA5A21CE34DD00BC3391 /* zepto.js */; };
+		04F0BA5D21CE34DD00BC3391 /* api.htm in Resources */ = {isa = PBXBuildFile; fileRef = 04F0BA5B21CE34DD00BC3391 /* api.htm */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		040ACB70D7D687553D13541C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		040FF1E92767A40F47D7338F /* Pods-GTJSBridge_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GTJSBridge_Tests.release.xcconfig"; path = "Target Support Files/Pods-GTJSBridge_Tests/Pods-GTJSBridge_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		04F0BA5A21CE34DD00BC3391 /* zepto.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zepto.js; sourceTree = "<group>"; };
+		04F0BA5B21CE34DD00BC3391 /* api.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = api.htm; sourceTree = "<group>"; };
 		3828B0FB51E53DEE410C1275 /* Pods_GTJSBridge_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTJSBridge_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC3E09C6D16C24E564C1519 /* Pods_GTJSBridge_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTJSBridge_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		595C737FEAFB463485B20255 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		6003F593195388D20070C39A /* Example for GTJSBridge */ = {
 			isa = PBXGroup;
 			children = (
+				04F0BA5B21CE34DD00BC3391 /* api.htm */,
+				04F0BA5A21CE34DD00BC3391 /* zepto.js */,
 				6003F59C195388D20070C39A /* GTAppDelegate.h */,
 				6003F59D195388D20070C39A /* GTAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -280,7 +286,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F0BA5D21CE34DD00BC3391 /* api.htm in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				04F0BA5C21CE34DD00BC3391 /* zepto.js in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
