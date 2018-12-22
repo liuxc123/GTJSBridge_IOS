@@ -42,6 +42,56 @@
 
         ]
       }
+    },
+    {
+      "name": "WKWebView",
+      "platforms": {
+        "ios": "8.0"
+      },
+      "public_header_files": "GTJSBridge/WKWebView/**/*.h",
+      "source_files": "GTJSBridge/WKWebView/**/*.{h,m}",
+      "resources": [
+        "GTJSBridge/WKWebView/resource/*.bundle"
+      ],
+      "dependencies": {
+        "GTJSBridge/Plugins": [
+
+        ],
+        "GTUIKit/CommonComponent/Toast": [
+
+        ],
+        "GTUIKit/CommonComponent/NavigationController": [
+
+        ],
+        "Aspects": [
+
+        ]
+      }
+    },
+    {
+      "name": "WKWebViewWithGTUINavigationBar",
+      "platforms": {
+        "ios": "8.0"
+      },
+      "public_header_files": "GTJSBridge/WKWebView/**/*.h",
+      "source_files": "GTJSBridge/WKWebView/**/*.{h,m}",
+      "resources": [
+        "GTJSBridge/WKWebView/resource/*.bundle"
+      ],
+      "dependencies": {
+        "GTJSBridge/Plugins": [
+
+        ],
+        "GTUIKit/CommonComponent/Toast": [
+
+        ],
+        "GTUIKit/CommonComponent/NavigationController": [
+
+        ],
+        "Aspects": [
+
+        ]
+      }
     }
   ]
 }

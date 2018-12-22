@@ -7,13 +7,53 @@
 //
 
 #import "GTAppDelegate.h"
+#import "GTViewController.h"
+#import "GTWebViewController.h"
 
 @implementation GTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    [[UINavigationBar appearance] setBackIndicatorImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    GTViewController *rootVC = [[GTViewController alloc] initWithNibName:nil bundle:nil];
+
+//    GTWebViewController *rootVC = [[GTWebViewController alloc] initWithURLString:@"http://www.baidu.com"];
+
+
+    GTUINavigationController *rootNavi = [[GTUINavigationController alloc] initWithRootViewController:rootVC];
+    [self setupDefaultNavi:[rootNavi naviBarViewControllerForViewController:rootVC]];
+    rootNavi.delegate = self;
+
+
+//    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:rootVC];
+
+
+    self.window.rootViewController = rootNavi;
+    [self.window makeKeyAndVisible];
+
     return YES;
+}
+
+- (void)navigationController:(GTUINavigationController *)navigationController willAddAppBarViewController:(GTUIAppBarViewController *)appBarViewController asChildOfViewController:(UIViewController *)viewController
+{
+    [self setupDefaultNavi:appBarViewController];
+}
+
+
+- (void)setupDefaultNavi:(GTUIAppBarViewController *)appBarController {
+    UIImageView *navImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navi_background"]];
+    navImageView.frame = appBarController.headerView.frame;
+    navImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [appBarController.headerView insertSubview:navImageView atIndex:0];
+    appBarController.headerView.canOverExtend = NO;
+    appBarController.navigationBar.titleFont = [UIFont systemFontOfSize:17];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

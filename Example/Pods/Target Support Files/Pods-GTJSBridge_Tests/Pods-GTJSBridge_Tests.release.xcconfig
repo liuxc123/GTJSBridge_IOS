@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GTJSBridge"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Aspects" "${PODS_CONFIGURATION_BUILD_DIR}/GTFInternationalization" "${PODS_CONFIGURATION_BUILD_DIR}/GTFTextAccessibility" "${PODS_CONFIGURATION_BUILD_DIR}/GTJSBridge" "${PODS_CONFIGURATION_BUILD_DIR}/GTMotionInterchange" "${PODS_CONFIGURATION_BUILD_DIR}/GTUIKit" "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GTJSBridge/GTJSBridge.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTFInternationalization/GTFInternationalization.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTFTextAccessibility/GTFTextAccessibility.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTJSBridge/GTJSBridge.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTMotionInterchange/GTMotionInterchange.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GTUIKit/GTUIKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "GTJSBridge"
+OTHER_LDFLAGS = $(inherited) -framework "Aspects" -framework "GTFInternationalization" -framework "GTFTextAccessibility" -framework "GTJSBridge" -framework "GTMotionInterchange" -framework "GTUIKit" -framework "MJRefresh"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

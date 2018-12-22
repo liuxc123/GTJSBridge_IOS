@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *直接在插件中向webView发送JS执行代码
  */
-- (NSString *)writeJavascript:(NSString *)javascript;
+- (void)writeJavascript:(NSString *)javascript completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler;
 
 @end
 

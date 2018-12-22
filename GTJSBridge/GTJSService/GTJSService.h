@@ -40,8 +40,7 @@ extern NSString *const JsBridgeServiceTag;  //获取Notification的service Tag
  * @class GTJSService
  * JSBridge服务，提供JS和本地Native代码的连接服务
  */
-@interface GTJSService : NSObject <UIWebViewDelegate> {
-}
+@interface GTJSService : NSObject <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler> 
 
 @property (nonatomic, weak) WKWebView *webView;
 @property (nonatomic, weak) id viewController;
@@ -87,7 +86,7 @@ extern NSString *const JsBridgeServiceTag;  //获取Notification的service Tag
  * 调用bridge绑定的webview执行JS代码
  */
 - (void)jsEval:(NSString *)js;
-- (NSString *)jsEvalIntrnal:(NSString *)js;
+- (void)jsEvalIntrnal:(NSString *)js completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler;
 
 @end
 

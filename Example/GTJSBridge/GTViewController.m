@@ -7,6 +7,8 @@
 //
 
 #import "GTViewController.h"
+#import "GTWebViewController.h"
+#import "GTNavigationController.h"
 
 @interface GTViewController ()
 
@@ -18,6 +20,31 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor.whiteColor;
+
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:btn];
+
+    btn.frame = self.view.bounds;
+
+    [btn setTitle:@"点击打开一个网页" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(openWebView) forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+- (void)openWebView
+{
+    GTWKWebViewPool.sharedInstance.prepare = NO;
+    
+    GTWebViewController *webVC = [[GTWebViewController alloc] initWithURLString:@"http://www.baidu.com"];
+//    webVC.navigationType = GTWebViewControllerNavigationTypeBarItem;
+//    webVC.navigationCloseBarButtonItemImage = [UIImage imageNamed:@"close"];
+    [self.navigationController pushViewController:webVC animated:YES];
+
+//    GTUINavigationController *navi = [[GTUINavigationController alloc] initWithRootViewController:webVC];
+//    [self presentViewController:navi animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

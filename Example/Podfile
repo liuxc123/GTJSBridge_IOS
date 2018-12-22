@@ -4,10 +4,9 @@ platform :ios, '8.0'
 
 target 'GTJSBridge_Example' do
   pod 'GTJSBridge', :path => '../'
+  pod 'GTUIKit'
 
   target 'GTJSBridge_Tests' do
     inherit! :search_paths
-
-    
   end
 end

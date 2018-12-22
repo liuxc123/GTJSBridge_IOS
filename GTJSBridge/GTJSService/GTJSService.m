@@ -24,7 +24,8 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
     NSString *_userAgent;  //用于记录绑定webview进来的UserAgent
 }
 
-@property (weak, nonatomic) id<WKWebViewDelegate> originDelegate;  //记录绑定webView的原始delegate
+@property (weak, nonatomic) id<WKNavigationDelegate> originNavigationDelegate;  //记录绑定wkwebView的原始WKNavigationDelegate
+@property (weak, nonatomic) id<WKUIDelegate> originUIDelegate;  //记录绑定wkwebView的原始WKUIDelegate
 @property (strong, nonatomic) GTJSPluginManager *pluginManager;  //本地插件管理器
 
 @end
@@ -45,18 +46,20 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
     if (self) {
         _webView = nil;
         _viewController = nil;
-        _originDelegate = nil;
+        _originUIDelegate = nil;
+        _originNavigationDelegate = nil;
         _pluginManager = [[GTJSPluginManager alloc] initWithConfigFile:configFile];
         _commandQueue = [[GTJSCommandQueue alloc] initWithService:self];
         _commandDelegate = [[GTJSCommandDelegateImpl alloc] initWithService:self];
         
         //设置当前webview的UserAgent,方便webview注入版本信息
-        _userAgent = [[[UIWebView alloc] init]
-                      stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-        NSString *appVersion =
-        [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-        NSString *customUserAgent = [_userAgent stringByAppendingFormat:@" _MAPP_/%@", appVersion];
-        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : customUserAgent}];
+        [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(NSString * _Nullable originUserAgent , NSError * _Nullable error) {
+            self->_userAgent = originUserAgent;
+            NSString *appVersion =
+            [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+            NSString *customUserAgent = [self->_userAgent stringByAppendingFormat:@" _MAPP_/%@", appVersion];
+            [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : customUserAgent}];
+        }];
     }
     return self;
 }
@@ -79,8 +82,11 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
     
     self.viewController = controller;
     self.webView = webView;
-    self.originDelegate = webView.delegate;
-    self.webView.delegate = self;
+    
+    self.originUIDelegate = webView.UIDelegate;
+    self.originNavigationDelegate = webView.navigationDelegate;
+    self.webView.UIDelegate = self;
+    self.webView.navigationDelegate = self;
     
     //注册webViewDelegate的KVO
     [self registerKVO];
@@ -101,8 +107,10 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
     [[NSNotificationCenter defaultCenter] postNotificationName:GTJSBridgeCloseNotification
                                                         object:self];
     
-    self.webView.delegate = self.originDelegate;
-    self.originDelegate = nil;
+    self.webView.UIDelegate = self.originUIDelegate;
+    self.webView.navigationDelegate = self.originNavigationDelegate;
+    self.originUIDelegate = nil;
+    self.originNavigationDelegate = nil;
     self.webView = nil;
     self.viewController = nil;
 }
@@ -112,26 +120,24 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
 {
     //加载结束核心JS结束之后通知前端
     NSString *jsReady = [NSString stringWithFormat:@"mapp.execPatchEvent('%@');", eventName];
-    [self jsEvalIntrnal:jsReady];
+    [self jsEvalIntrnal:jsReady completionHandler:nil];
 }
 
 
 #pragma mark - 执行JS函数
 - (void)jsEval:(NSString *)js
 {
-    [self performSelectorOnMainThread:@selector(jsEvalIntrnal:) withObject:js waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(jsEvalIntrnal:completionHandler:) withObject:js waitUntilDone:NO];
 }
 
 
 /**
  * 最后执行主函数
  */
-- (NSString *)jsEvalIntrnal:(NSString *)js
+- (void)jsEvalIntrnal:(NSString *)js completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler
 {
     if (self.webView) {
-        return [self.webView stringByEvaluatingJavaScriptFromString:js];
-    } else {
-        return nil;
+        [self.webView evaluateJavaScript:js completionHandler:completionHandler];
     }
 }
 
@@ -160,70 +166,106 @@ NSString *const JsBridgeServiceTag = @"GTJSbridgeservice";
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-    id newDelegate = change[@"new"];
-    if (object == self.webView && [keyPath isEqualToString:@"delegate"] && newDelegate != self) {
-        self.originDelegate = newDelegate;
-        self.webView.delegate = self;
-    }
+//    id newDelegate = change[@"new"];
+//    if (object == self.webView && [keyPath isEqualToString:@"delegate"] && newDelegate != self) {
+//        self.originDelegate = newDelegate;
+//
+//        self.webView.delegate = self;
+//    }
 }
 
 
-#pragma mark webViewDelegate monitor
+#pragma mark WKScriptMessage monitor
+
+- (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
+
+}
+
+#pragma mark WKNavigationDelegate monitor
 /**
  * 由于前端有时需要在document.ready调用JSBridge，所以在页面加载之前加载核心JS即可保证
  */
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     if (webView != self.webView) return;
-    if ([self.originDelegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
-        [self.originDelegate webViewDidStartLoad:webView];
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:didStartProvisionalNavigation:)]) {
+        [self.originNavigationDelegate webView:webView didStartProvisionalNavigation:navigation];
     }
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    if (webView != self.webView) return;
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:didCommitNavigation:)]) {
+        [self.originNavigationDelegate webView:webView didCommitNavigation:navigation];
+    }
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     if (webView != self.webView) return;
     //加载本地的框架JScode
     NSString *js = [_pluginManager localCoreBridgeJSCode];
-    [self jsEvalIntrnal:js];
+    [self jsEvalIntrnal:js completionHandler:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:GTJSBridgeWebFinishLoadNotification
                                                         object:self];
-    
-    if ([self.originDelegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
-        [self.originDelegate webViewDidFinishLoad:webView];
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:didFinishNavigation:)]) {
+        [self.originNavigationDelegate webView:webView didFinishNavigation:navigation];
     }
 }
 
-- (BOOL)webView:(UIWebView *)webView
-shouldStartLoadWithRequest:(NSURLRequest *)request
- navigationType:(UIWebViewNavigationType)navigationType
-{
-    if (webView != self.webView) return YES;
-    BOOL res = NO;
-    NSURL *url = [request URL];
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    if (webView != self.webView) return;
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:didFailNavigation:withError:)]) {
+        [self.originNavigationDelegate webView:webView didFailNavigation:navigation withError:error];
+    }
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    if (webView != self.webView) return;
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:didFailProvisionalNavigation:withError:)]) {
+        [self.originNavigationDelegate webView:webView didFailProvisionalNavigation:navigation withError:error];
+    }
+}
+
+
+#pragma mark 这个代理方法表示接收到服务器跳转请求之后调用
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    if (webView != self.webView) return;
+
+    NSURL *url = webView.URL;
     if ([[url scheme] isEqualToString:JsBridgeScheme]) {
         [self handleURLFromWebview:[url absoluteString]];
-        return NO;
+        return;
     }
-    
-    if ([self.originDelegate
-         respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
-        res |= [self.originDelegate webView:webView
-                 shouldStartLoadWithRequest:request
-                             navigationType:navigationType];
-    } else {
-        res = YES;
+
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:decidePolicyForNavigationAction:decisionHandler:)]) {
+        [self.originNavigationDelegate webView:webView decidePolicyForNavigationAction:navigationAction decisionHandler:decisionHandler];
     }
-    
-    return res;
+
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+#pragma mark 这个代理方法表示当客户端收到服务器的响应头，根据 response 相关信息，可以决定这次跳转是否可以继续进行。在发送请求之前，决定是否跳转，如果不添加这个，那么 wkwebview 跳转不了 AppStore 和 打电话
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     if (webView != self.webView) return;
-    
-    if ([self.originDelegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
-        [self.originDelegate webView:webView didFailLoadWithError:error];
+
+    NSURL *url = webView.URL;
+    if ([[url scheme] isEqualToString:JsBridgeScheme]) {
+        [self handleURLFromWebview:[url absoluteString]];
+        return;
+    }
+
+    if ([self.originNavigationDelegate respondsToSelector:@selector(webView:decidePolicyForNavigationResponse:decisionHandler:)]) {
+        [self.originNavigationDelegate webView:webView decidePolicyForNavigationResponse:navigationResponse decisionHandler:decisionHandler];
+    }
+}
+
+
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+
+    if (webView != self.webView) return;
+
+    if (@available(iOS 9.0, *)) {
+        if ([self.originNavigationDelegate respondsToSelector:@selector(webViewWebContentProcessDidTerminate:)]) {
+            [self.originNavigationDelegate webViewWebContentProcessDidTerminate:webView];
+        }
     }
 }
 

@@ -66,12 +66,12 @@
 #pragma mark - 获取JSON参数
 - (id)jsonParamForkey:(NSString *)key
 {
-    return [self jsonParamForkey:key withDefault:nil];
+    return [self jsonParamForkey:key withDefault:NULL];
 }
 
 - (id)jsonParamForkey:(NSString *)key withDefault:(id)defaultValue
 {
-    return [self jsonParamForkey:key withDefault:defaultValue andClass:nil];
+    return [self jsonParamForkey:key withDefault:defaultValue andClass:NULL];
 }
 
 

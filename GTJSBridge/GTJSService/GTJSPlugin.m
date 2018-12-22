@@ -108,9 +108,9 @@
 }
 
 
-- (NSString *)writeJavascript:(NSString *)javascript
+- (void)writeJavascript:(NSString *)javascript completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler
 {
-    return [self.bridgeService jsEvalIntrnal:javascript];
+    return [self.bridgeService jsEvalIntrnal:javascript completionHandler:completionHandler];
 }
 
 @end

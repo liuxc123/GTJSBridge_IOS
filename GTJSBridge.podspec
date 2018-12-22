@@ -27,5 +27,34 @@ Pod::Spec.new do |s|
       component.dependency "GTJSBridge/JSService"
   end
 
+    
+    # WKWebView
+    s.subspec "WKWebView" do |component|
+        component.ios.deployment_target = '8.0'
+        component.public_header_files = 'GTJSBridge/WKWebView/**/*.h'
+        component.source_files = 'GTJSBridge/WKWebView/**/*.{h,m}'
+        component.resources = ["GTJSBridge/WKWebView/resource/*.bundle"]
+
+        component.dependency "GTJSBridge/Plugins"
+        component.dependency "GTUIKit/CommonComponent/Toast"
+        component.dependency "GTUIKit/CommonComponent/NavigationController"
+
+        component.dependency "Aspects"
+    end
+
+    # WKWebView
+    s.subspec "WKWebViewWithGTUINavigationBar" do |component|
+        component.ios.deployment_target = '8.0'
+        component.public_header_files = 'GTJSBridge/WKWebView/**/*.h'
+        component.source_files = 'GTJSBridge/WKWebView/**/*.{h,m}'
+        component.resources = ["GTJSBridge/WKWebView/resource/*.bundle"]
+
+        component.dependency "GTJSBridge/Plugins"
+        component.dependency "GTUIKit/CommonComponent/Toast"
+        component.dependency "GTUIKit/CommonComponent/NavigationController"
+
+        component.dependency "Aspects"
+    end
+
   
 end

@@ -7,8 +7,10 @@
 //
 
 @import UIKit;
+#import "GTNavigationController.h"
 
-@interface GTAppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface GTAppDelegate : UIResponder <UIApplicationDelegate, GTUINavigationControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
